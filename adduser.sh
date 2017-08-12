@@ -1,0 +1,1 @@
+htpasswd passwd $1

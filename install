@@ -1,0 +1,8 @@
+#!/bin/bash
+export GOPATH=`pwd`
+go get github.com/abbot/go-http-auth
+go build dilta.go
+echo >adminpasswd
+echo >passwd
+mkdir tmp
+mkdir apps

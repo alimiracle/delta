@@ -8,6 +8,17 @@ dilta has low minimal requirements and can run on an inexpensive Raspberry Pi. S
 ## Open Source
 dilta is 100% open source and free of charge. All source code is available under the GPL License
 
+## Dependencies
+
+to build this app
+you nede to install
+
+* git
+
+*golang
+
+* htpasswd
+
 ## install
 
 
@@ -57,5 +68,5 @@ chmod +x adduser.sh
 to run the app
 type 
 ```bash
-./dilta&
+sudo ./dilta&
 ```

@@ -7,7 +7,8 @@ dilta runs anywhere Go can compile for: Windows, Mac, Linux, ARM, etc.
 dilta has low minimal requirements and can run on an inexpensive Raspberry Pi. Some users even run dilta instances on their NAS devices.
 ## Open Source
 dilta is 100% open source and free of charge. All source code is available under the GPL License
-##install
+
+## install
 
 
 to build the app you nede golang

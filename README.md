@@ -1,12 +1,12 @@
-dilta is File Sharing system
+delta is File Sharing system
 its good for Local networks or small teams
 ## Cross-platform 
-dilta runs anywhere Go can compile for: Windows, Mac, Linux, ARM, etc.
+delta runs anywhere Go can compile for: Windows, Mac, Linux, ARM, etc.
 
 ## Lightweight 
-dilta has low minimal requirements and can run on an inexpensive Raspberry Pi. Some users even run dilta instances on their NAS devices.
+delta has low minimal requirements and can run on an inexpensive Raspberry Pi. Some users even run delta instances on their NAS devices.
 ## Open Source
-dilta is 100% open source and free of charge. All source code is available under the GPL License
+delta is 100% open source and free of charge. All source code is available under the GPL License
 
 ## Dependencies
 
@@ -23,18 +23,18 @@ you nede to install
 
 Download the program useing git
 
-git clone https://notabug.org/alimiracle/dilta
+git clone https://notabug.org/alimiracle/delta
 
 then type
 ```bash
-cd dilta
+cd delta
 chmod + install
 ./install
 ```
 
 ## permissions
 
-dilta Have two types of users
+delta Have two types of users
 
 1- admin user
 
@@ -70,7 +70,7 @@ Replace new_user With the user that you want
 to run the app
 type 
 ```bash
-sudo ./dilta&
+sudo ./delta&
 ```
 
 now You can access  the program from web browser useing your PC IP

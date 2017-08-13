@@ -17,12 +17,9 @@ you nede to install
 
 *golang
 
-* htpasswd
+* apache2-utils
 
 ## install
-
-
-to build the app you nede golang
 
 Download the program useing git
 
@@ -49,8 +46,10 @@ type
 
 ```bash
 chmod +x addadmin.sh
-./addadmin.sh
+./addadmin.sh admin_user
 ```
+
+Replace admin_user With the user that you want
 
 2- Normal user
 
@@ -62,11 +61,16 @@ type
 
 ```bash
 chmod +x adduser.sh
-./adduser.sh
+./adduser.sh new_user
 ```
+
+Replace new_user With the user that you want
+
 ## run
 to run the app
 type 
 ```bash
 sudo ./dilta&
 ```
+
+now You can access  the program from web browser useing your PC IP

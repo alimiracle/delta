@@ -159,6 +159,11 @@ func upload(w http.ResponseWriter, r *http.Request) {
                return
            }
            defer file.Close()
+// Do not allow index.html files
+if(handler.Filename=="index.html") {
+    fmt.Fprintf(w, "<p> You cannot pass! I am a servant of the Secret Fire, wielder of the Flame of Anor. The dark fire  will not avail you, Go back to the shadow. You cannot pass");
+               return
+}
            f, err := os.OpenFile("./apps/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
            if err != nil {
                fmt.Println(err)

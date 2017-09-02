@@ -9,8 +9,6 @@ import "html/template"
 import "strconv"
 import "os"
 import "io"
-import "crypto/md5"
-import "time"
 import "log"
 import "fmt"
 import "net/http"
@@ -141,17 +139,13 @@ searchResult = searchResult[:0]
 
  } 
 /* this is your end, this is your end */
-
-func upload(w http.ResponseWriter, r *http.Request) {
+func uploade(w http.ResponseWriter, r *http.Request) {
        if r.Method == "GET" {
-           crutime := time.Now().Unix()
-           h := md5.New()
-           io.WriteString(h, strconv.FormatInt(crutime, 10))
-           token := fmt.Sprintf("%x", h.Sum(nil))
-
            t, _ := template.ParseFiles("upload.gtpl")
-           t.Execute(w, token)
+           t.Execute(w, nil)
        } else {
+
+    name := r.FormValue("folder")
            
            file, handler, err := r.FormFile("uploadfile")
            if err != nil {
@@ -159,19 +153,20 @@ func upload(w http.ResponseWriter, r *http.Request) {
                return
            }
            defer file.Close()
-// Do not allow index.html files
-if(handler.Filename=="index.html") {
+if(handler.Filename == "index.html") {
     fmt.Fprintf(w, "<p> You cannot pass! I am a servant of the Secret Fire, wielder of the Flame of Anor. The dark fire  will not avail you, Go back to the shadow. You cannot pass");
                return
 }
-           f, err := os.OpenFile("./apps/"+handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+
+
+           f, err := os.OpenFile("./apps/" + name + "/" +handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
            if err != nil {
                fmt.Println(err)
                return
            }
            defer f.Close()
            io.Copy(f, file)
-    fmt.Fprintf(w, "<p> uplode ok </p>");
+    fmt.Fprintf(w, "upload ok");
        }
 }
 
@@ -254,7 +249,7 @@ syscall.Chroot(".")
     http.HandleFunc("/remove", auth.JustCheck(admin_authenticator, remove))
     http.HandleFunc("/rename", auth.JustCheck(admin_authenticator, rename))
     http.HandleFunc("/new", auth.JustCheck(admin_authenticator, mkdir))
-    http.HandleFunc("/upload", auth.JustCheck(admin_authenticator, upload))
+    http.HandleFunc("/upload", auth.JustCheck(admin_authenticator, uploade))
     http.HandleFunc("/search", auth.JustCheck(authenticator, search))
     http.HandleFunc("/admin", auth.JustCheck(admin_authenticator, admin))
     err := http.ListenAndServe(":80", nil) // setting listening port

@@ -1,7 +1,7 @@
 #!/bin/bash
 export GOPATH=`pwd`
 go get github.com/abbot/go-http-auth
-go build dilta.go
+go build delta.go
 echo >adminpasswd
 echo >passwd
 mkdir tmp

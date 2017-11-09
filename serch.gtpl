@@ -1,12 +1,12 @@
 <html>
     <head>
-    <title> search </title>
+    <title> Serch </title>
     </head>
     <body>
-<a href="/home"home</a>
+<a href="/home">home</a>
         <form action="/search" method="post">
             name:<input type="text" name="name">
-            <input type="submit" value="Search">
+            <input type="submit" value="Serch">
         </form>
     </body>
 </html>

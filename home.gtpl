@@ -27,7 +27,7 @@
         <a class="a button-normal " href="/apps" title="files"><img src="css/files.svg" class="icon" alt="files"> Files</a>
       </div>
       <div id="footer">
-		By Ali Mircle 2017
+		By ali miracle 2017
 	  </div> 
   </body>
 </html>
